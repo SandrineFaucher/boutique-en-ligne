@@ -18,6 +18,11 @@ include './head.php';
 <body>
   <!--intégration de la navbar-->
   <?php 
+  //Je vérifie si je viens du bouton valider ma commande de la page de validation************
+  if (isset($_GET['commandeValidee'])){
+    // dans ce cas je vide mon panier puisque ma commande est validée !**********************
+    viderPanier($_SESSION['panier']);
+  }
   include './header.php';
   ?>
 
@@ -58,11 +63,7 @@ include './head.php';
         </div>
         </div>";
     }
-    //Je vérifie si je viens du bouton valider ma commande de la page de validation************
-    if (isset($_GET['commandeValidee'])){
-      // dans ce cas je vide mon panier puisque ma commande est validée !**********************
-      viderPanier($_SESSION['panier']);
-    }
+    
      ?>
   
    </div><!--fin de la row-->
